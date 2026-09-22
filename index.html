@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JobForm Connect — Form Lamaran Kerja Online</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="shell">
+    <section class="card" aria-label="JobForm Connect">
+      <aside class="hero">
+        <div class="badge">💼 Form Lamaran Kerja Online</div>
+        <h1>JobForm Connect</h1>
+        <p class="subtitle">Portal pendaftaran kandidat dengan tampilan profesional, rapi, dan mudah digunakan dari desktop maupun ponsel.</p>
+        <ul class="hero-list" aria-label="Keunggulan form">
+          <li><span>✓</span> Data terkirim langsung ke Telegram</li>
+          <li><span>✓</span> Validasi otomatis sebelum dikirim</li>
+          <li><span>✓</span> Layout formal untuk kebutuhan rekrutmen</li>
+        </ul>
+      </aside>
+
+      <section class="form-panel">
+        <h2 class="section-title">Data Kandidat</h2>
+        <p class="section-desc">Lengkapi informasi berikut dengan benar agar tim rekrutmen dapat melakukan proses verifikasi.</p>
+
+        <form id="jobForm">
+          <div class="grid">
+            <div class="notice">
+              Catatan: NIK dan nama ibu kandung termasuk data pribadi sensitif. Gunakan hanya jika benar-benar diperlukan dan pastikan halaman/form ini dipakai secara internal atau melalui koneksi tepercaya.
+            </div>
+
+            <div class="field full">
+              <label for="nama">Nama Lengkap <span>*</span></label>
+              <input type="text" id="nama" name="nama" placeholder="Contoh: Andi Pratama" required />
+            </div>
+
+            <div class="field">
+              <label for="namaIbu">Nama Ibu Kandung <span>*</span></label>
+              <input type="text" id="namaIbu" name="namaIbu" placeholder="Contoh: Siti Aminah" required />
+            </div>
+
+            <div class="field">
+              <label for="nik">NIK <span>*</span></label>
+              <input type="text" id="nik" name="nik" inputmode="numeric" minlength="16" maxlength="16" pattern="[0-9]{16}" placeholder="16 digit NIK" required />
+              <span class="hint">Masukkan 16 digit angka sesuai KTP.</span>
+            </div>
+
+            <div class="field">
+              <label for="umur">Umur <span>*</span></label>
+              <input type="number" id="umur" name="umur" min="15" max="80" placeholder="Contoh: 24" required />
+            </div>
+
+            <div class="field">
+              <label for="tanggalLahir">Tanggal Lahir <span>*</span></label>
+              <input type="date" id="tanggalLahir" name="tanggalLahir" required />
+            </div>
+
+            <div class="field">
+              <label for="tempatLahir">Tempat Lahir <span>*</span></label>
+              <input type="text" id="tempatLahir" name="tempatLahir" placeholder="Contoh: Bandung" required />
+            </div>
+
+            <div class="field">
+              <label for="asalSekolah">Asal Sekolah <span>*</span></label>
+              <input type="text" id="asalSekolah" name="asalSekolah" placeholder="Contoh: SMAN 1 Bandung" required />
+            </div>
+
+            <div class="field">
+              <label for="noHp">No HP/WhatsApp <span>*</span></label>
+              <input type="tel" id="noHp" name="noHp" placeholder="Contoh: 081234567890" required />
+            </div>
+
+            <div class="field">
+              <label for="pendidikanTerakhir">Pendidikan Terakhir <span>*</span></label>
+              <select id="pendidikanTerakhir" name="pendidikanTerakhir" required>
+                <option value="" disabled selected>Pilih pendidikan</option>
+                <option value="SMP">SMP</option>
+                <option value="SMA">SMA</option>
+                <option value="D3">D3</option>
+                <option value="S1">S1</option>
+                <option value="S2">S2</option>
+                <option value="S3">S3</option>
+              </select>
+            </div>
+
+            <div class="field full">
+              <label for="pendidikanSaatIni">Pendidikan Saat Ini <span>*</span></label>
+              <input type="text" id="pendidikanSaatIni" name="pendidikanSaatIni" value="-" placeholder="Isi '-' jika tidak sedang menempuh pendidikan" required />
+              <span class="hint">Contoh: S1 Teknik Informatika semester 5, atau isi "-".</span>
+            </div>
+          </div>
+
+          <div class="actions">
+            <button type="submit" id="submitBtn">Kirim Lamaran</button>
+            <div id="status" class="status" role="status" aria-live="polite"></div>
+          </div>
+        </form>
+      </section>
+    </section>
+
+    <p class="footer-note">Pastikan data sudah benar sebelum dikirim. Nomor WhatsApp aktif akan membantu tim rekrutmen menghubungi Anda lebih cepat.</p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
